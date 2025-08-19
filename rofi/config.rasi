@@ -1,0 +1,9 @@
+@theme "theme.rasi"
+
+configuration {
+	show-icons: true;
+	icon-theme: "Colloid";
+}
+
+
+
