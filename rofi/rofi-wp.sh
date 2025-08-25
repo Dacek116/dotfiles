@@ -17,7 +17,7 @@ SELECTED_PATH="$WALLPAPER_DIR/$SELECTED_WALL"
 
 # === SET WALLPAPER ===
     hyprpanel sw "$SELECTED_PATH"
-    matugen image "$SELECTED_PATH"
+    matugen image -m dark -t scheme-fidelity "$SELECTED_PATH"
    
 # === CREATE SYMLINK ===
 mkdir -p "$(dirname "$SYMLINK_PATH")"

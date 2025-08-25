@@ -53,7 +53,7 @@
   "menus.clock.weather.enabled": false,
   "theme.bar.transparent": false,
   "theme.bar.buttons.monochrome": false,
-  "wallpaper.image": "/home/dacek/Obrazy/Wallpapers/wallhaven-2yzg1g_3840x2160.png",
+  "wallpaper.image": "/home/dacek/Obrazy/Wallpapers/wallhaven-nmo5yy_2560x1440.png",
   "wallpaper.enable": false,
   "theme.bar.menus.monochrome": false,
   "wallpaper.pywal": false,
@@ -142,5 +142,9 @@
   "theme.bar.buttons.radius": "0.1em",
   "theme.bar.layer": "top",
   "theme.bar.background": "#11111b",
-  "theme.bar.dropdownGap": "4em"
+  "theme.bar.dropdownGap": "4em",
+  "notifications.showActionsOnHover": true,
+  "theme.bar.menus.menu.notifications.pager.show": false,
+  "notifications.monitor": 1,
+  "notifications.autoDismiss": false
 }
