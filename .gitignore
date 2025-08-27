@@ -1,0 +1,10 @@
+# Ignoruj wszystko
+/*
+
+# Wyjątki (czyli foldery, które chcemy śledzić)
+!fish/
+!btop/
+!nixos/
+
+# Możesz dodać inne wyjątki (np. pliki konfiguracyjne), jeśli potrzebujesz
+!.gitignore
