@@ -1,5 +1,7 @@
 if status is-interactive
-    fastfetch
+    ff
 end
 
 set -g fish_greeting ""
+
+fish_add_path /home/dacek/.spicetify

@@ -5,6 +5,15 @@
 !fish/
 !btop/
 !nixos/
+!yazi/
+!rofi/
+!matugen/
+!kitty/
+!hyprpanel/
+!hypr/
+!fastfetch/
+!cava/
+!btop/
 
 # Możesz dodać inne wyjątki (np. pliki konfiguracyjne), jeśli potrzebujesz
 !.gitignore

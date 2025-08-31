@@ -6,20 +6,19 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
   };
 
-
   outputs = { self, nixpkgs, ... }@inputs:
-
     let
-    system = "x86_64-linux";
+      system = "x86_64-linux";
     in {
 
 
-  # nixos-btw - system hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = { inherit inputs; };
-      modules = [ ./nixos/configuration.nix ];
+      # Konfiguracja systemu NixOS
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = system;
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [ ./nixos/configuration.nix ];
       };
-  };
-
+    };
 }

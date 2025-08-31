@@ -71,6 +71,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    cava
     btop
     kitty
     hyprpanel
@@ -85,7 +86,12 @@
     nwg-look
     adw-gtk3
     gnome-themes-extra
-    papirus-icon-theme    
+    papirus-icon-theme
+    cmatrix    
+    pipewire
+    gdb
+    unzip
+    gparted
   ];
 
   fonts.packages = with pkgs; [
