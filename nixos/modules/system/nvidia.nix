@@ -36,15 +36,4 @@ XDG_SESSION_TYPE = "wayland"; # Change to "x11" if you use X11
 # Accept NVIDIA license
 nixpkgs.config.nvidia.acceptLicense = true;
 
-###############################
-### GAMING ###################
-#############################
-
-environment.sessionVariables = {
-  STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-    "\${HOME}/.steam/root/compatibilitytools.d";
-
-};
-
-
-}
+} 

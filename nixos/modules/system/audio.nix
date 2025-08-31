@@ -1,24 +1,6 @@
 { lib, config, pkgs, ... }:
 
 {
-    # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  services.flatpak.enable = true;
-
-    # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  services.udisks2.enable = true;
-  services.gvfs.enable = true;
-  #services.envfs.enable = true;
-  #services.resolved.enable = true;
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-
-
   # Enable sound with pipewire.
   services.pulseaudio = {
     enable = false;

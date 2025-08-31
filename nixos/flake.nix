@@ -18,7 +18,7 @@
         specialArgs = {
           inherit inputs;
         };
-        modules = [ ./nixos/configuration.nix ];
+        modules = [ /home/dacek/.config/nixos/modules/default.nix ];
       };
     };
 }
