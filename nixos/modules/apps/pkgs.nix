@@ -27,6 +27,8 @@
         unzip       # File Extraction Tool
 
     #GTK Themes and Icons
+        gtk3
+        gtk4
         papirus-icon-theme
         adw-gtk3
         gnome-themes-extra
