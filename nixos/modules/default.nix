@@ -2,19 +2,27 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+    [ # Include the results of the hardware scan. 
+      #/etc/nixos/hardware-configuration.nix  # Uncomment to use the default hardware configuration (recommended)
+    
+    # Desktop environment
+      ./desktop/hyprland.nix
+      #./desktop/gnome.nix
+      #./desktop/plasma.nix
 
-      ./apps/pkgs.nix
-      ./apps/flatpaks.nix
+    # Packages
+      ./packages/pkgs.nix
+      ./packages/flatpaks.nix
+      ./packages/fonts.nix
+
+    # Gaming
       ./gaming/default.nix
-      ./system/audio.nix
-      ./system/nvidia.nix
-      ./system/auto.nix
-      ./system/desktop.nix
-      ./system/fonts.nix
-      ./system/services.nix
+
+    # System
       ./system/default.nix
+      ./system/hardware.nix
+      ./system/nvidia.nix
+      ./system/services.nix
     ];
 
 

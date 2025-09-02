@@ -4,4 +4,6 @@ end
 
 set -g fish_greeting ""
 
-fish_add_path /home/dacek/.spicetify
+if test -z "$DISPLAY"; and test (tty) = "/dev/tty1"
+    exec Hyprland
+end
