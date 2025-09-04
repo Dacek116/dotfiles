@@ -33,14 +33,14 @@ input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/config'
 post_hook = "pkill -USR1 cava"
 
-[templates.gtk3]
-input_path = '~/.config/matugen/gtk-colors.css.j2'
-output_path = '~/.config/gtk-3.0/colors.css'
-post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
-
 [templates.gtk4]
-input_path = '~/.config/matugen/gtk-colors.css.j2'
-output_path = '~/.config/gtk-4.0/colors.css'
+  input_path  = '~/.config/matugen/templates/gtk/colors.css'
+  output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.gtk3]
+  input_path  = '~/.config/matugen/templates/gtk/colors.css'
+  output_path = '~/.config/gtk-3.0/colors.css'
+  post_hook = "pkill -USR1 nautilus"
 
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spotify-colors.ini'
@@ -50,3 +50,7 @@ post_hook = 'spicetify apply'
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/midnightdiscord.css'
 output_path = '~/.config/vencord/themes/midnight.theme.css'
+
+[templates.folder]
+input_path = '~/.config/matugen/templates/folder-color.txt'
+output_path = '~/.config/matugen/papirus-folders/folder-color.txt'
