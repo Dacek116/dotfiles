@@ -1,37 +1,32 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  enableGaming = config.gaming.enable;
+in
 {
-#Enable steam
-    programs.steam = {
-        enable = true;
-        dedicatedServer.openFirewall = true;
-        package = pkgs.steam.override {
-            extraPkgs = pkgs': with pkgs'; [
-                xorg.libXcursor
-                xorg.libXi
-                xorg.libXinerama
-                xorg.libXScrnSaver
-                libpng
-                libpulseaudio
-                libvorbis
-                stdenv.cc.cc.lib # Provides libstdc++.so.6
-                libkrb5
-                keyutils
-                # Add other libraries as needed
-            ];
-        };
-    };
+  options.gaming.enable = lib.mkEnableOption "Enable the Steam gaming setup";
 
-#Enable gamemode
+  config = lib.mkIf enableGaming {
+    programs.steam.enable = true;
+    programs.steam.remotePlay.openFirewall = true;
+    programs.steam.dedicatedServer.openFirewall = true;
+    programs.steam.extest.enable = false;
+    programs.steam.protontricks.enable = true;
+
+    hardware.steam-hardware.enable = true;
+
+    programs.gamescope.enable = true;
+    programs.gamescope.package = pkgs.gamescope;
+    programs.gamescope.capSysNice = true;
+
     programs.gamemode.enable = true;
 
-#Gaming Utilities
     environment.systemPackages = with pkgs; [
-        heroic
-        lutris
-        protonup-qt
-        goverlay
-        mangohud
+      protontricks
+      protonplus
+      heroic
+      mangohud
+      goverlay
     ];
-
+  };
 }

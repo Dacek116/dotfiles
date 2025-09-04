@@ -1,6 +1,1 @@
-if status is-interactive
-    ff
-end
-
-set -g fish_greeting ""
-
+/nix/store/kxh7cf15ffr2bcldpjp5d0kxfr4va63f-home-manager-files/.config/fish/config.fish

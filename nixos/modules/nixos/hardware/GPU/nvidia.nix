@@ -1,39 +1,40 @@
+{ config, lib, pkgs, ... }:
 
-{ lib, config, pkgs, ... }:
+let
+  cfg = config.nvidia;
+in {
+  options.nvidia.enable = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Enable NVIDIA drivers and configuration";
+  };
 
-{
-########################################
-#######         Nvidia          ########
-########################################
+  config = lib.mkIf cfg.enable {
 
-hardware.graphics = {
-  enable = true;
-  enable32Bit = true;
-};
+    nixpkgs.config.nvidia.acceptLicense = true;
 
-# Enable proprietary NVIDIA driver with modesetting
-hardware.nvidia = {
-modesetting.enable = true; # Wymagane dla Wayland
-nvidiaSettings = true;
-open = false;  # Use proprietary driver, not nouveau
-package = config.boot.kernelPackages.nvidiaPackages.latest;
-};
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
-# Enable X server with NVIDIA driver
-services.xserver = {
-enable = true;
-videoDrivers = [ "nvidia" ];
-};
+    hardware.nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      open = false;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
+    };
 
-# Environment variables for Wayland or X11 sessions
-environment.sessionVariables = {
-GBM_BACKEND = "nvidia-drm";
-LIBVA_DRIVER_NAME = "nvidia";
-__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-XDG_SESSION_TYPE = "wayland"; # Change to "x11" if you use X11
-};
+    services.xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+    };
 
-# Accept NVIDIA license
-nixpkgs.config.nvidia.acceptLicense = true;
-
-} 
+    environment.sessionVariables = {
+      GBM_BACKEND = "nvidia-drm";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      XDG_SESSION_TYPE = "wayland"; # Zmień na "x11" jeśli nie używasz Waylanda
+    };
+  };
+}

@@ -20,7 +20,7 @@ window {
     y-offset:       calc(50% - 800px); 
     width:          720;
     border-radius:  0px;
-    background-color: @surface;
+    background-color:   @surface;
     border-color:      @primary;
     border:          1px;
 }

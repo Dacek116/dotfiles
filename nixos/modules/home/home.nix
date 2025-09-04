@@ -6,22 +6,22 @@
   home.username = "dacek";
   home.homeDirectory = "/home/dacek";
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  
+
 
     imports = [
     ./xdg.nix
-    ./programs/git.nix
-    ./programs/btop.nix
-    ./programs/terminal/kitty.nix
-    ./programs/terminal/fastfetch.nix
-    ./programs/terminal/cli-tools.nix
+    ./desktop/rofi.nix
+    ./desktop/theming.nix
 
-    ./wm/swww/swww.nix
-    ./wm/rofi/rofi.nix
 
-    #./WindowManager/rofi.nix
     ];
 
+
+    programs.git = {
+    enable = true;
+    userName = "dacek116";
+    userEmail = "dapeloom046@gmail.com";
+  };
     
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -30,7 +30,8 @@
     pkgs.discord
     pkgs.spotify
     pkgs.nwg-look
-    pkgs.helix
+    pkgs.waypaper
+    pkgs.kitty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

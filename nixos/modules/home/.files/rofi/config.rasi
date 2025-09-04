@@ -1,0 +1,101 @@
+@theme "/dev/null"
+@import "colors.rasi"
+
+configuration {
+	font: "MesloLGL Nerd Font Bold 12";
+	show-icons: true;
+}
+
+* {
+    background-color: rgba(0, 0, 0, 0);
+    text-color:         @primary;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    location:       center;
+    y-offset:       calc(50% - 800px); 
+    width:          720;
+    border-radius:  0px;
+    background-color:   @surface;
+    border-color:      @primary;
+    border:          1px;
+}
+
+mainbox {
+    padding:    20 px;
+    spacing:    10 px; 
+    children: [inputbar, listview];
+}
+
+inputbar {
+    background-color:   @surface-container;
+    border-color:       @primary;
+
+    border:         1px;
+    border-radius:  0px;
+
+    padding:    11px 16px;
+    spacing:    10px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @outline;
+}
+
+entry {
+    placeholder:        "Search";
+    placeholder-color:  @outline;
+}
+
+message {
+    margin:             12px 0 0;
+    border-radius:      16px;
+    border-color:       @outline;
+    background-color:   @outline;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    background-color:   transparent;
+
+    margin:     12px 0 0;
+    lines:      8;
+    columns:    1;
+
+    fixed-height: true;
+}
+
+element {
+    padding:        8px 16px;
+    spacing:        8px;
+    border-radius:  0px;
+}
+
+element normal active {
+    text-color: @outline;
+}
+
+element alternate active {
+    text-color: @outline;
+}
+
+element selected normal, element selected active {
+    background-color:   @surface-container-high;
+}
+
+element-icon {
+    size:           1em; 
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: @primary;
+}

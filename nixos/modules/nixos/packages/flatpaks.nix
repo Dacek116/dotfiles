@@ -16,18 +16,5 @@ system.activationScripts = {
       fi
     '';
   };
-
-  installFlatpaks = {
-    text = ''
-      FLATPAK="/run/current-system/sw/bin/flatpak"
-      for app in \
-        org.prismlauncher.PrismLauncher \
-        app.zen_browser.zen; do
-        if ! $FLATPAK list --system | grep -q "$app"; then
-          $FLATPAK install -y --system flathub "$app"
-        fi
-      done
-    '';
-  };
 };
 }
