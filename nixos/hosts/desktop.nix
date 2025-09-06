@@ -6,7 +6,7 @@
       /etc/nixos/hardware-configuration.nix  # Uncomment to use the default hardware configuration (recommended)
 
       ../modules/nixos/default.nix
-      ../modules/home/desktop/hyprland.nix
+      #../modules/home/xdg.nix
     ];
 
       nvidia.enable = true;

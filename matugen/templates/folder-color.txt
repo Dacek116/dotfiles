@@ -1,1 +1,1 @@
-{{colors.primary.default.hex}}
+/nix/store/aljk7g5a0n2n8pvcaxwq1zb0lk6mip2f-home-manager-files/.config/matugen/templates/folder-color.txt

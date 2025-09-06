@@ -1,22 +1,29 @@
- { lib, config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
- {
+{
+    environment.systemPackages = with pkgs; [
+        # Programy Systemowe
+        simple-scan
+        gnome-calculator 
+        polkit_gnome
 
+        # Graphic Utilities
+        libva
+        libva-utils
+        vulkan-tools
+        vulkan-headers
 
-############################################
-    
-    environment.systemPackages = with pkgs; [   
-    #Default Applications
-        btop        # Default Task Manager
-        nautilus    # Defa    #Terminal Utilities
-        
+        # Libs
+        mesa
         gtk3
         gtk4
-        swww
-        rofi
-        matugen
-    #Other
 
-    
-  ];    
+        # Themes and Icons
+
+        papirus-icon-theme
+        papirus-folders
+        adw-gtk3
+        capitaine-cursors
+    ];
 }
+    

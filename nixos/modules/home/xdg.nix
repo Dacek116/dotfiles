@@ -20,10 +20,10 @@ in {
       videos = "${home}/Wideo";
       templates = "${home}/Szablony";
       publicShare = "${home}/Publiczne";
-      extraConfig = {
-        XDG_BACKUP_DIR = "${home}/Backup";
-        XDG_SCREENSHOTS_DIR = "${home}/Obrazy/Zrzuty ekranu";
-      };
+      #extraConfig = {
+      #  XDG_BACKUP_DIR = "${home}/Backup";
+      #  XDG_SCREENSHOTS_DIR = "${home}/Obrazy/Zrzuty ekranu";
+      #};
     };
     portal = {
       enable = true;
@@ -39,13 +39,15 @@ in {
       enable = true;
       defaultApplications = {
         "inode/directory" = "nautilus.desktop";
-        "application/x-extension-htm" = "firefox.desktop";
-        "application/x-extension-html" = "firefox.desktop";
-        "application/x-extension-shtml" = "firefox.desktop";
-        "application/xhtml+xml" = "firefox.desktop";
-        "application/x-extension-xhtml" = "firefox.desktop";
-        "application/x-extension-xht" = "firefox.desktop";
-        "application/pdf" = "zathura.desktop";
+        "x-scheme-handler/http" = "app.zen_browser.zen.desktop";
+        "x-scheme-handler/https" = "app.zen_browser.zen.desktop";
+        "application/x-extension-htm" = "app.zen_browser.zen.desktop";
+        "application/x-extension-html" = "app.zen_browser.zen.desktop";
+        "application/x-extension-shtml" = "app.zen_browser.zen.desktop";
+        "application/xhtml+xml" = "app.zen_browser.zen.desktop";
+        "application/x-extension-xhtml" = "app.zen_browser.zen.desktop";
+        "application/x-extension-xht" = "app.zen_browser.zen.desktop";
+        "application/pdf" = "libreofficewriter.desktop";
         "text/markdown" = "hx.desktop";
         "text/plain" = "hx.desktop";
         "text/x-shellscript" = "hx.desktop";
@@ -62,12 +64,12 @@ in {
         "text/x-dockerfile" = "hx.desktop";
         "text/x-xml" = "hx.desktop";
         "text/x-php" = "hx.desktop";
-        "image/png" = "imv-dir.desktop";
-        "image/jpg" = "imv-dir.desktop";
-        "image/jpeg" = "imv-dir.desktop";
-        "image/gif" = "imv-dir.desktop";
-        "image/svg" = "imv-dir.desktop";
-        "image/tiff" = "imv-dir.desktop";
+        "image/png" = "loupe.desktop";
+        "image/jpg" = "loupe.desktop";
+        "image/jpeg" = "loupe.desktop";
+        "image/gif" = "loupe.desktop";
+        "image/svg" = "loupe.desktop";
+        "image/tiff" = "loupe.desktop";
         "video/avi" = "mpv.desktop";
         "video/mp4" = "mpv.desktop";
         "video/mkv" = "mpv.desktop";

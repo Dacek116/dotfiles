@@ -29,7 +29,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = ".backup";
+            home-manager.backupFileExtension = null;
             home-manager.users.dacek = import /home/dacek/.config/nixos/modules/home/home.nix;
           }
         ];
